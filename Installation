@@ -1,0 +1,30 @@
+Terminal session 1 : Creating a "Hello World" Java Application  
+
+java -version
+sudo apt update 
+sudo apt install openjdk-11-jdk 
+
+mkdir hello-world-java
+cd hello-world-java
+vim HelloWorld.java
+javac HelloWorld
+
+git --version
+git apt update
+sudo apt install git -y
+
+git init
+git add .
+git status 
+git config --global user.email "example.com"
+git commit -m "initialized Hello World"
+ 
+git remote add origin https://github.com/your-username/my-repo.git
+git remote -v
+git branch -M main
+git pull --rebase origin main
+git push -u origin main
+
+
+sudo apt remove jenkins
+sudo systmctl status jankins
