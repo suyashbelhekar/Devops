@@ -25,6 +25,33 @@ git branch -M main
 git pull --rebase origin main
 git push -u origin main
 
-
+pipeline { 
+agent any 
+stages { 
+stage('Clone') { 
+steps { 
+git branch: 'main', url: 'https://github.com/your-username/hello-world-java.git ' 
+} 
+} 
+stage('Build') { 
+steps { 
+sh 'javac HelloWorld.java' 
+} 
+} 
+stage('Run') { 
+steps { 
+sh 'java HelloWorld' 
+} 
+} 
+} 
+} 
+post { 
+success { 
+echo 'Build and execution successful!' 
+} 
+failure { 
+echo 'Build or execution failed!' 
+} 
+}
 sudo apt remove jenkins
 sudo systmctl status jankins
